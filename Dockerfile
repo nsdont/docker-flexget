@@ -30,7 +30,7 @@ RUN \
 	echo "**** install flexget ****" && \
 	apk add --no-cache --virtual=build-deps gcc libxml2-dev libxslt-dev libc-dev python3-dev jpeg-dev && \
 	pip install --upgrade --force-reinstall \
-		flexget && \
+	    git+https://github.com/nsdont/flexget@develop && \
 	apk del --purge --no-cache build-deps && \
 	apk add --no-cache libxml2 libxslt jpeg && \
 	echo "**** system configurations ****" && \
